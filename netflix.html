@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Netflix Stock Market Prection</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Netflix Stock Market Prection Using Time Series forecasting (XGBOOST) </h1>
+							
+							<p>The objective of this project is to design a stock prediction model to predict the closing price of Netflix using time series forecasting with XGBOOST algorithm
+                                <br></br>
+                                Algorithmic trading has transformed the stock market and its related industries. At the moment, bots are handling more than 70% of all trades taking place in the US. The days of suited persons waving sheets of paper and shouting into telephones are long gone.
+
+This prompted me to think about how I could create my own algorithm to trade stocks, or at the very least, try to anticipate them with some degree of accuracy.
+
+The outcomes weren't horrible either!
+
+<br></br>
+                                As a data scientist, it makes our work easier when we have a functional or business grasp of what we are trying to construct, therefore I felt compelled to offer some business knowledge as well. I am not an expert in the stock market, but I thought it would help understand. In stock trading, the closing price simply refers to the last price a buyer paid for a particular stock during business hours, whereas the opening price refers to the price of the stock's initial transaction.
+                               
+                                </p>
+							<h2>Dataset.</h2>
+                            <article class="style">
+                                
+                                <span class="image">
+                                    <img src="images/netflixData.png" alt="" />
+                                </span>
+                                
+                                    </a>
+                                    <p>The dataset for the netfix stock market data used here was obtained from Kaggle. </p>
+                            </article>
+                            <br></br>
+                           <article class="style">
+                              
+                            <h2>EDA and Feature Creation</h2>
+                            <p>In time series analysis and forecasting, “time” can be the only feature you have at your disposal so it’s better to extract as much information as possible from it. The following function creates columns out of the DateTime index. For example, at the time 1/1/2017 0:10 , the command df.index.hour will extract the value 0, since it’s midnight. df.index.dayofweek will show a 6 as January 1st, 2017 was a Sunday (numeration starts from 0), and so on. </p>
+                            <p>I have created the below boxplots to understand the trend of stock market prices in week, month, quarter etc.</p>
+                            <span class="image">
+                                <img src="images/year&quarter.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+                            <span class="image">
+                                <img src="images/month&day.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+							<h2>Splitting the dataset into train and test sets</h2>
+                            <p>To predict the stock market, the dataset was split into train and test sets. The model was trained on the train set and the predictions were then tested with the test set. The below graph shows the train test split.</p>
+                            <span class="image">
+                                <img src="images/traintest.png" alt="" />
+                            </span>
+							<br></br>
+							<h2>Predictions .</h2>
+                            <p>Next, to predict records in our test set I have used Gradient Bossting (XGBOOST) algorithm.
+                                <br></br>
+                                Hyperparameters settings for the algorithm is as follows:
+                                <br></br>
+                                n_estimators : the number of learning rounds the XGBoost algorithm will try to learn from the training data
+                                <br></br>
+                                max_depth : the maximum depth a tree can have, a deeper tree is more likely to cause overfitting
+                                <br></br>
+                                learning_rate : or shrinkage factor, as new trees are created to correct residual errors, the learning rate (<1.0) “slows down” the ability of the model to fit the data and consequently learn as the number of trees increases
+                                <br></br>
+                                verbose : how often the model prints out on the console the result, we set 100 here as the n_estimators is quite high. The default value is 1</p>
+                                <br></br>
+                                <p>The plot below shows the output of the predictions.</p>
+                                <span class="image">
+                                <img src="images/pred.png" alt="" />
+                            </span>
+							<br></br>
+						
+                            <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/Nextflix-Stock-Market-Prediction-using-Time-Series-Forecasting-XGBOOST-" class="button small">View on Github</a>
+                        
+						
+										</a>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

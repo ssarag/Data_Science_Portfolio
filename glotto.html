@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Glottochronology</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Glottochronology of Indo-Aryan Languages</h1>
+							
+							<p>Data science has had a significant impact on linguistics. Having a thorough understanding of the true extent of variety among languages, within dialects, and among dialects is essential to all areas of the subject. With the invention of computers, the subfield of corpus linguistics—which is probably as old as the field itself—gave birth to many fundamental techniques used in data science. When the first huge search engines appeared in the late 1990s, linguists immediately began utilizing them to identify examples, investigate trends, and reveal subtle patterns in usage that emerge only at a very large scale. Even the largest corpora seemed little in relation to the open Web; this is arguably the first big data application in the linguistic sector. Data Science methods like Natural Language Processing and Machine learning have emerged as important counterparts to traditional and comparative method in linguistics. The goal of this research is to study the Glottochronology of Indo-Aryan (Indic) languages using modern Data Science techniques.
+                            </p>
+                            <h2>Research Objectives</h2>
+                            <p>The main goal of this research is to Reconstruct phylogenetic tree for Indic languages. The research is divided into three parts.</p>
+							<p>1. In the first part, cognates of all the 18 languages are determined by using Automatic Cognate Detection Methods, Natural Language Processing and clustering algorithms.</p>
+                            <p>2. The cognates identified from the first objective, are then used to generate phylogenetic tree using Machine Learning techniques.</p>
+                            <p>3. Comparison of the Phylogenetic tree obtained from Machine learning technique with the phylogenetic tree obtained by historical linguistics. Here we will consider the phylogenetic tree obtained by the linguistics as the gold standard. In Data Science “Gold Standard” is considered the ground truth and accepted as the most accurate result. Figure below, represents the Gold Standard tree obtained by historical linguistics for Indo-Aryan (Indic) Languages.</p>
+                            
+                            <article class="style">
+                                
+                                <span class="image">
+                                    <img src="images/goldtree.png" alt="" />
+                                </span>
+                                
+                            </article>
+                            <h2>Understanding the terms</h2>
+                            <h3>Cognates</h3>
+                                    <p>In historical linguistics, cognates, also known as lexical cognates, are groups of words in distinct languages that have been inherited in direct lineage from an etymological predecessor in a shared parent language.The meanings of cognates do not necessarily have to be the same; they could differ as a result of divergent linguistic development. For example, the English word ‘starve’, German word ‘sterben’ (to die) and Dutch word ‘sterven’ (die) are derived from the same Proto-Germanic root ‘sterbana</p>
+                            
+                            <article class="style">
+                                
+                                <span class="image">
+                                    <img src="images/cognateeg.png" alt="" />
+                                </span>
+                            <br></br>
+                            <h3>Phylogenetic Trees</h3>
+                            <p>A phylogenetic tree, also called a phylogeny, is a diagram that shows the evolutionary branches from which various species, creatures, languages, or genes have descended from one another. Phylogenies are helpful for classifying organisms, and languages, organizing knowledge of biological diversity, and shedding light on evolutionary processes.</p>
+                           <article class="style">
+                           
+                            <span class="image">
+                                <img src="images/treeeg.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+							<h2>Workflow of the Research</h2>
+                            <article class="style">
+                           
+                                <span class="image">
+                                    <img src="images/workflow.png" alt="" />
+                                </span>
+							<br></br>
+							<h2>Dataset</h2>
+                            <p>In the research, words from Indic (Indo-Aryan) languages are used for classification and reconstruction of phylogenetic trees. To keep the data at manageable level, Swadesh list of Indic languages from Wiktionary is used. The Swadesh list is compiled by Morris Swadesh and consists of carefully chosen words for the purpose of linguistic study majorly in lexicostatistics and glottochronology. The list consists of 207 words which are basic root morphemes obtained by translating English words into most common words which are used in everyday language. These words in the Swadesh list are the words which are universal in every language and likely to be found in every culture like body parts, numerals, geographical terms, simple activities, etc. The Swadesh list words are already converted to IPA transliterations. The International Photonic Alphabet (IPA) gives visual representations of speech sounds by the means of symbols.</p>
+							<p>To collect the data from the Wiktionary website, web scraping with beautiful soup library is used to iterate over the Swadesh list and saved the dataset in a tsv (Comma-separated format) file format. Figure below shows the data extracted by web scraping for the word ‘I’ in all the Indic languages.</p>
+                            <article class="style">
+                           
+                                <span class="image">
+                                    <img src="images/web.png" alt="" />
+                                </span>
+
+                            <br> Automatic Cognate Detection and results<br>
+                            <p>The cognates are found using two different techniques given below.</p>
+                            <p>1. Automatic Detection of Cognates using Lingpy library • Sound Class Based Alignments • LexStat Method with three different clustering techniques- UPGMA, edit-distance and Infomap</p>
+                            <p>2. Automatic Detection of Cognates using Pointwise Mutual Information</p>
+                            <p>The results obtained from all these methods are then evaluated to determine the most accurate method.</p>
+                            <br></br>
+                            <p>For evaluating the methods and performance of cognate detection, bcubes method is used. In this method, the performance is evaluated based on the Precision, Recall and F1 Scores of the cognate detection results. To compare the cognates, a gold standard cognate judgement was necessary. As it is difficult to create a gold stand cognate judgement list, In the research the cognate judgements carried out by the author. The research contains manually curated cognate IDs for Swadesh List of 100 words. This list of cognate ID’s is considered gold standard list. </p>
+                            <p>Below is th result of evalution for all the cognate detection methods. The lexStat-Infomap and PMI algorithm gave more accurate results as compared to others. Therefore, to generate the phylogenetic tree I have used the output obtained from these methods.</p>
+                            <article class="style">
+                           
+                                <span class="image">
+                                    <img src="images/evaulation.png" alt="" />
+                                </span>
+
+                            <h2>Reconstruction of Pylogenetic Tree</h2>
+                            <p>To reconstruct the phylogenetic tree, Bayesian Inference using Markov Chain Monte Carlo method is used.</p>
+                            <p>After applying the MCMC algorithm, the final result of phylogenetic tree obtained is as below</p>
+                            <article class="style">
+                           
+                                <span class="image">
+                                    <img src="images/mcmc.png" alt="" />
+                                </span>
+
+                            <br></br>
+                            <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/Glottochronology-of-Indo-Aryan-Languages" class="button small">View on Github</a>
+                        
+						
+										</a>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

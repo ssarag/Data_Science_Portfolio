@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Customer Churn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+						
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Telecom Customer Churn (Exploratory Data Analysis and Model Buidling)<br />
+								  </h1>
+								<p>Customer attrition, commonly referred to as customer churn, is the decision made by a customer to discontinue utilizing a company's goods or services. However, for each client who churns, there are usually early signs or metrics that can be discovered through churn research.Because customers can choose from a range of service providers and actively switch from one to another, the telecom industry experiences a high rate of churn (annual churn rate of 15-25%).</p>
+								
+								
+                                <p>In general, from a business standpoint, acquiring new clients is more expensive than keeping current ones. In fact, a 5% improvement in client retention alone can boost profits by at least 25%. This is due to the fact that returning consumers are likely to spend an additional 60% on a company's goods and services. As a result, the company can spend less on the operating costs of having to attract new consumers by spending time and money encouraging a current customer to choose your company over competitors because they've already made up their mind.</p>
+                                <p>If a business could predict which customers are most likely to depart and why, it could concentrate its customer retention efforts exclusively on these "high risk" clients. This contributes to the company's goal of extending its consumer base and regaining customer loyalty.</p>
+                           
+                                <h2>Dataset</h2>
+                                <p>For the analysis, I have used "Telecom Customer" dataset from kaggle.
+
+                                    Each row represents a customer, each column contains customer’s attributes described on the column Metadata.
+                                    
+                                    The raw data contains 7043 rows (customers) and 21 columns (features).
+                                    
+                                    The “Churn” column is our target.</p>
+                                <h2>Results obtained from EDA </h2>
+                            </header>
+							<section class="tiles">
+								
+								<article class="style">
+									<p>Gender and Churn Distribution</p>
+									<span class="image">
+										<img src="images/churnGen.png" alt="" />
+									</span>
+									
+										
+				
+								</a>
+								
+								
+								
+								
+								</article>
+								<article class="style">
+									<p>Churn distribution with respect to contract type</p>
+									<span class="image">
+										<img src="images/Contract.png" alt="" />
+									</span>
+									
+										
+							
+								
+									</a>
+								
+								</article>
+								<article class="style">
+									<p>Churn distribution with respect to Payment Methods</p>
+									<span class="image">
+										<img src="images/Payment.png" alt="" />
+									</span>
+									
+						
+								</article>
+								<article class="style">
+									<p>Churn distribution with respect to tech support</p>
+									<span class="image">
+										<img src="images/Tech.png" alt="" />
+									</span>
+									
+								
+								</article>
+								<article class="style">
+									<p>Churn distribution with respect to monthly charges </p>
+									<span class="image">
+										<img src="images/monthy .png" alt="" />
+									</span>
+							
+								</article>
+								<article class="style">
+									<p>Correlation Matrix </p>
+									<span class="image">
+										<img src="images/matrix.png" alt="" />
+									</span>
+								</article>
+								
+							</section>
+                            <br></br>
+                            <h3>Few Observations from EDA</h3>
+                            <p>1. 75% of customer who have Month-to-Month Contract have opted to move out as compared to 13% of customers who have signed One Year Contract and 3% of customers who have signed Two Year Contract.</p>
+                            
+                            <p>2. Majority of the customers who moved out were having Electronic Check as Payment Method and others who opted for Credit-Card automatic transfer / Bank Automatic Transfer and Mailed Check as Payment Method were less likely to switch.</p>
+                            
+                            <p>3. High Monthly Charges are also one of a reason which makes Customers more likely to churn</p>
+                           
+                            <p>4. The absence of online security, Paperless Billing system and services with no TechSupport were the similiar trend are of the customers who are most likely churn.</p>
+                            
+							<p>5. Customers without dependents and customers who have partners are more likely to churn while senior citizens being the most of churn.</p>
+                            <p>6. Customers who opted for DSL service are larger in number and is found to have less churn rate compared to Fibre optic service</p>
+							<p>7. Fiber optic service which was choosen by a lot of customers and it's evident that there's high churn rate among these customers. This could expose an issue in the Fiber optic service which dissatisfied most of it's customers, further looking into the issue might find a better and apt solution.</p>
+							<p>8. There's a small fraction of customers who are more likely to churn and it's been found that they don't have a phone service.</p>
+							<h2>Machine learning Model Buidling and their results</h2>
+
+                           
+                            <section class="tiles">
+								
+								<article class="style">
+									<p>Support Vector Machine</p>
+									<span class="image">
+										<img src="images/svm.png" alt="" />
+									</span>
+									
+								</article>
+                                
+                                <article class="style">
+									<p>Random Forest</p>
+									<span class="image">
+										<img src="images/random.png" alt="" />
+									</span>
+									
+								</article>
+                                
+                                <article class="style">
+									<p>Logistic Regression</p>
+									<span class="image">
+										<img src="images/logistic.png" alt="" />
+									</span>
+									
+								</article>
+                                <article class="style">
+									<p>Gradient Boost</p>
+									<span class="image">
+										<img src="images/gradient.png" alt="" />
+
+									</span>
+									
+								    </article>
+                                </section>
+								<br></br>
+                                <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/Customer-Churn-Prediction" class="button small">View on Github</a>
+                        
+						
+										</a>
+                                           
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+								
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

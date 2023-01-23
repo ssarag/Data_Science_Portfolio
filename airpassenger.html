@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ARIMA Model</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Porjects</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Time Series Forecasting using ARIMA Model on Air Passenger Dataset </h1>
+							
+							<p>An extension of the simple autoregressive moving average model is the autoregressive integrated moving average or ARIMA. These two models are employed to forecast or predict upcoming time-series data points. Regression analysis in the form of ARIMA shows how strong a dependent variable is in comparison to other varying factors.
+
+                                The model's ultimate goal is to forecast future time series movement by focusing on discrepancies between series values rather than actual values. In situations when the data exhibits signs of non-stationarity, ARIMA models are used. Non-stationary data are always converted into stationary data in time series analysis.
+                                <br></br>
+                                
+                            This project aims at using ARIMA model on Air Passengers dataset
+                            
+                                </p>
+							<h2>Dataset.</h2>
+                            <article class="style">
+                                
+                                <span class="image">
+                                    <img src="images/airdata.png" alt="" />
+                                </span>
+                                
+                                    </a>
+                                    <p>The dataset used here is Air passengers data and was obtained from Kaggle.This dataset provides monthly totals of US airline passengers from 1949 to 1960. </p>
+                            </article>
+                            <br></br>
+                           <article class="style">
+                              
+                            <h2>Steps required to build the model</h2>
+                            <p> Step 1 ---> Check Stationarity: If a time series has a trend or seasonality component, it must be made stationary </p>
+                            <p>Step 2 ---> Determine the d value: If the time series is not stationary, it needs to be stationarized through differencing.</p>
+                            <p>Step 3 --> Select AR and MA terms: Use the ACF and PACF to decide whether to include an AR term, MA term, (or) ARMA</p>
+                            <p>Step 4 --> Build the model</p>
+                           
+							<h2>Checking if the dataset is stationary</h2>
+                            <p> I checked the stationarity of the dataset by performing Augumented Dickey-Fuller Test. The below image shows the result of the test. As the value of p is greater than 0.05, it suggests that the data is not stationary
+                            </p>
+                            <span class="image">
+                                <img src="images/ADtest.png" alt="" />
+                            </span>
+							<br></br>
+                            <span class="image">
+                                <img src="images/Stationary.png" alt="" />
+                            </span>
+							<h2>To make the data stationary, I performed the decomposition of data.
+
+                            </h2>
+                            <p>Sesonal Decomposition</p>
+                            <span class="image">
+                                <img src="images/decomposition.png" alt="" />
+                            </span>
+                                                                <br></br>
+                                
+                                <br></br>
+                                 The dataset was split into train and test sets
+                                <br></br>
+                                <h2>Finding the value of the d parameter</h2>
+                                <span class="image">
+                                    <img src="images/dpara.png" alt="" />
+                                </span>
+                               
+							<br></br>
+
+                            <h2>Finding the values of parameter p and q</h2>
+                            <span class="image">
+                                <img src="images/p&q.png" alt="" />
+                            </span>
+                                                                <br></br>
+                             <h2>Forecasting Result</h2>
+                             <span class="image">
+                                <img src="images/arima.png" alt="" />
+                            </span>
+                                                                <br></br>
+						
+                            <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/TimeSeries-Forecasting-on-AirPassenger-dataset-using-ARIMA" class="button small">View on Github</a>
+                        
+						
+										</a>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

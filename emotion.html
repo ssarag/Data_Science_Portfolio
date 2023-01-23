@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Emotion Detection</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Emotion Detection - Implementation of a model using OpenCV and CNN</h1>
+							
+							<p>
+                                Convolutional Neural Networks are useful for a wide range of tasks, which shows how far deep learning has come in a short period of time. In this project, I have developed a model to detect emotions from facial features.
+                            </p>
+                            
+							<h2>Dataset.</h2>
+                           
+                                    <p>I used the FER 2013 dataset from Kaggle for my project. The only readily accessible dataset I could find for this purpose was this one. The emotion labels in the dataset are mapped to the corresponding pixel values in the current image using CSV files. It has seven emotions or classes (0 = angry, 1 = disgust, 2 = fear, 3 = happy, 4 = sad, 5 = surprise, 6 = neutral).</p>
+                                    <p>As we can see from the above figure, the classes are a little skewed.</p>  
+                                    <article class="style">
+                                
+                                            <span class="image">
+                                                <img src="images/sample.png" alt="" />
+                                            </span>
+                                            
+                                                </a>
+                                       
+                            </article>
+                            <br></br>
+                           <article class="style">
+                            <h2>Model</h2>
+                            <p>In order to create an image, we must translate the pixel values into their image form in Google Colab. In order to complete this task, I have used a the function. The function takes as input the dataset's pixels column and transforms each entry from a string to an array of integers that is then moulded into the images that will be used for training.
+
+                                Because some classes in the dataset contain a lot more examples than others, the dataset is a little bit skewed. Using RandomOverSampler, which oversamples the classes that are in lower numbers in a dataset, is one technique to get around this. It essentially replicates cases in the minority classes at random, which aids in balancing out the dataset. I have used RandomOverSampler to balance the dataset.
+                                I have used a CNN model to detect the emotions. Before training the model,the image emotion labels were converted to one-hot encoded, using to_categorical.Here we have 7 categories. And then, the model was trained for 30 epochs</p>  
+                            <h2>Prediction Results</h2>
+                            
+                            <span class="image">
+                                <img src="images/pred1.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+
+                            <span class="image">
+                                <img src="images/pred2.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+                            <span class="image">
+                                <img src="images/pred3.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+							
+							
+                            <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/Emotion-Detection" class="button small">View on Github</a>
+                        
+						
+										</a>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

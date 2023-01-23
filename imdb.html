@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>EDA and Data Visualization on IMDB Dataset</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Exploratory Data Analysis and Data Visualization on IMDB Dataset</h1>
+							
+							<p>I've always like playing around with data. Another interest of mine is watching and discussing movies. Combining these two interests was amusing. In this project I have performed analysis of IMDB dataset obtained from kagggle. Few of the business questions that explored are as below.
+                                <br></br>
+                                1. What are the top rated movies?
+                                <br></br>
+                                2. Which genre of the movies is mostly liked by the audience?
+                                <br></br>
+                                3. Which movies have the highest gross?
+                                <br></br>
+                                4. Do the movies with highest IMDB rating earn highest gross always?
+                                <br></br>
+                                5. What is the trend analysis of the movie genre preferences by the audience?
+                                <br></br>
+                                6. Who are the top rated direnctors and actors?
+                                <br></br>
+                                7. What runtime is good to get a good IMDB rating and gross?
+                                <br></br>
+                                </p>
+							<h2>Dataset.</h2>
+                            <article class="style">
+                                
+                                <span class="image">
+                                    <img src="images/imdbd.png" alt="" />
+                                </span>
+                                
+                                    </a>
+                                    <p>The dataset used here was obtained from Kaggle. To load the dataset and perform the EDA and Data visualisation, I have used Pandas. The dataset contains the following columns.</p>
+                            </article>
+                            <br></br>
+                           <article class="style">
+                              
+                            <h2>Results and Analysis.</h2>
+                            <p>I've always considered that 1994 was the year when the best movies were made (Forrest Gump, Pulp Fiction, The Shawshank Redemption, etc.). The table below shows the highest rated IMDB movies. </p>
+                            <span class="image">
+                                <img src="images/topmovies.png" alt="" />
+                            </span>
+                            <br></br>
+                            </article>
+                            <br></br>
+							<p>The association between film duration and film rating was another intriguing study result. The longer the film, the higher the likelihood of receiving favorable ratings. However, for films with run times of +3 hours or more, the ratings begin to fluctuate considerably.Another noteworthy finding is that the "Crime-Drama" genre has maintained its appeal over the years and is the highest-rated movie genre.</p>
+                            <span class="image">
+                                <img src="images/runtime&genre.png" alt="" />
+                            </span>
+							<br></br>
+							<p>Next, I decided to analyse the trend of genre in each decade and it gave some intresting insights. The decades from 1994-2000 were filled with genre like Family, drama, history, romance, etc. Each decade had its own favourite genere. This dramatically changed in the year 2000, when the genre Action, Sci-Fi, Adventure became the most popular till the year 2020. The bar plot below shows the trend analysis for each genre.</p>
+							<span class="image">
+                                <img src="images/trend1.png" alt="" />
+                            </span>
+							<br></br>
+							
+							<p>The average number of voters per film, as shown in the below graph, peaked in the 1990s and early 2000s and has been steadily declining since then. Despite rising movie ratings, fewer people are voting for each movie.   This indicates to me that voters frequently cast more votes for movies they enjoy. They don't bother rating a movie that was mediocre or dull. However, it seems to only apply to recent movies, not ones from the 1990s or 2000s. The plots below show the avegrage gross earned by movies and thier compariosn with IMDB rating and Number of votes.</p>
+							<span class="image">
+                                <img src="images/rating&Votes.png" alt="" />
+                            </span>
+							<br></br>
+							
+                            <p>For detailed resutls of analysis and code please visit github from the below link.</p>
+        
+                                            <a href="https://github.com/ssarag/EDA-IMDB-Dataset" class="button small">View on Github</a>
+                        
+						
+										</a>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Contact</h2>
+								<ul class="icons">
+									
+									<li><a href="https://linkedin.com/in/shalakasarag" class=" icon brands style 2 fa-linkedin"><span class="label">LinkedLn</span></a></li>
+									<li><a href="https://github.com/ssarag" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://shalakasarag95@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+								</ul>
+							</section>
+							
+						</div>
+					</footer>
+                    
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
